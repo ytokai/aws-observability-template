@@ -56,7 +56,7 @@ export class LogsInsightsQueries extends Construct {
       'top-error-messages',
       new logs.QueryString({
         filterStatements: ['@message like /(?i)(error|exception)/'],
-        stats: 'count(*) as occurrences by @message',
+        statsStatements: ['count(*) as occurrences by @message'],
         sort: 'occurrences desc',
         limit: 25,
       }),
@@ -78,8 +78,9 @@ export class LogsInsightsQueries extends Construct {
       'lambda-memory-headroom',
       new logs.QueryString({
         filterStatements: ['@type = "REPORT"'],
-        stats:
+        statsStatements: [
           'max(@memorySize / 1000 / 1000) as provisioned_mb, max(@maxMemoryUsed / 1000 / 1000) as max_used_mb, avg(@maxMemoryUsed / 1000 / 1000) as avg_used_mb',
+        ],
       }),
     );
 
@@ -98,7 +99,7 @@ export class LogsInsightsQueries extends Construct {
       'LogVolumeByStream',
       'log-volume-by-stream',
       new logs.QueryString({
-        stats: 'count(*) as events by @logStream',
+        statsStatements: ['count(*) as events by @logStream'],
         sort: 'events desc',
         limit: 25,
       }),
