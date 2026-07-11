@@ -25,8 +25,16 @@ English version: [README.md](README.md)
 
 ## 使い方
 
+### ライブラリとしてインストール
+
+```bash
+npm install github:ytokai/aws-observability-template#v0.1.0
+```
+
+`aws-cdk-lib` と `constructs` は peerDependencies です（CDKアプリなら導入済みのはず）。
+
 ```ts
-import { LambdaDashboard, AlbDashboard, LogsInsightsQueries } from './lib';
+import { LambdaDashboard, AlbDashboard, LogsInsightsQueries } from 'aws-observability-template';
 
 new LambdaDashboard(this, 'OrderProcessor', {
   functionName: 'order-processor',

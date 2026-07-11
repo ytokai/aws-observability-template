@@ -27,8 +27,17 @@ and saturation.
 
 ## Usage
 
+### Install as a library
+
+```bash
+npm install github:ytokai/aws-observability-template#v0.1.0
+```
+
+`aws-cdk-lib` and `constructs` are peer dependencies — your CDK app
+already has them.
+
 ```ts
-import { LambdaDashboard, AlbDashboard, LogsInsightsQueries } from './lib';
+import { LambdaDashboard, AlbDashboard, LogsInsightsQueries } from 'aws-observability-template';
 
 new LambdaDashboard(this, 'OrderProcessor', {
   functionName: 'order-processor',
