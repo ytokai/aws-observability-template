@@ -1,0 +1,290 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExampleStack (all services) matches snapshot 1`] = `
+{
+  "Parameters": {
+    "BootstrapVersion": {
+      "Default": "/cdk-bootstrap/hnb659fds/version",
+      "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]",
+      "Type": "AWS::SSM::Parameter::Value<String>",
+    },
+  },
+  "Resources": {
+    "ApiServiceDashboard79F89D8E": {
+      "Properties": {
+        "DashboardBody": {
+          "Fn::Join": [
+            "",
+            [
+              "{"widgets":[{"type":"text","width":24,"height":1,"x":0,"y":0,"properties":{"markdown":"# ECS: app-cluster / api-service"}},{"type":"metric","width":12,"height":6,"x":0,"y":1,"properties":{"view":"timeSeries","title":"CPU utilization (%)","region":"",
+              {
+                "Ref": "AWS::Region",
+              },
+              "","metrics":[["AWS/ECS","CPUUtilization","ClusterName","app-cluster","ServiceName","api-service"],["AWS/ECS","CPUUtilization","ClusterName","app-cluster","ServiceName","api-service",{"stat":"Maximum"}]],"yAxis":{}}},{"type":"metric","width":12,"height":6,"x":12,"y":1,"properties":{"view":"timeSeries","title":"Memory utilization (%)","region":"",
+              {
+                "Ref": "AWS::Region",
+              },
+              "","metrics":[["AWS/ECS","MemoryUtilization","ClusterName","app-cluster","ServiceName","api-service"],["AWS/ECS","MemoryUtilization","ClusterName","app-cluster","ServiceName","api-service",{"stat":"Maximum"}]],"yAxis":{}}},{"type":"metric","width":24,"height":6,"x":0,"y":7,"properties":{"view":"timeSeries","title":"Running tasks (Container Insights)","region":"",
+              {
+                "Ref": "AWS::Region",
+              },
+              "","metrics":[["ECS/ContainerInsights","RunningTaskCount","ClusterName","app-cluster","ServiceName","api-service",{"stat":"Minimum"}]],"yAxis":{}}}]}",
+            ],
+          ],
+        },
+        "DashboardName": "ecs-app-cluster-api-service",
+      },
+      "Type": "AWS::CloudWatch::Dashboard",
+    },
+    "AppDatabaseDashboardBEAF90A6": {
+      "Properties": {
+        "DashboardBody": {
+          "Fn::Join": [
+            "",
+            [
+              "{"widgets":[{"type":"text","width":24,"height":1,"x":0,"y":0,"properties":{"markdown":"# Aurora: app-database"}},{"type":"metric","width":8,"height":6,"x":0,"y":1,"properties":{"view":"timeSeries","title":"CPU utilization (%)","region":"",
+              {
+                "Ref": "AWS::Region",
+              },
+              "","metrics":[["AWS/RDS","CPUUtilization","DBClusterIdentifier","app-database"],["AWS/RDS","CPUUtilization","DBClusterIdentifier","app-database",{"stat":"Maximum"}]],"yAxis":{}}},{"type":"metric","width":8,"height":6,"x":8,"y":1,"properties":{"view":"timeSeries","title":"Database connections","region":"",
+              {
+                "Ref": "AWS::Region",
+              },
+              "","metrics":[["AWS/RDS","DatabaseConnections","DBClusterIdentifier","app-database"]],"yAxis":{}}},{"type":"metric","width":8,"height":6,"x":16,"y":1,"properties":{"view":"timeSeries","title":"Freeable memory (bytes)","region":"",
+              {
+                "Ref": "AWS::Region",
+              },
+              "","metrics":[["AWS/RDS","FreeableMemory","DBClusterIdentifier","app-database",{"stat":"Minimum"}]],"yAxis":{}}},{"type":"metric","width":12,"height":6,"x":0,"y":7,"properties":{"view":"timeSeries","title":"Read / Write latency (p90, seconds)","region":"",
+              {
+                "Ref": "AWS::Region",
+              },
+              "","metrics":[["AWS/RDS","ReadLatency","DBClusterIdentifier","app-database",{"stat":"p90"}],["AWS/RDS","WriteLatency","DBClusterIdentifier","app-database",{"stat":"p90"}]],"yAxis":{}}},{"type":"metric","width":12,"height":6,"x":12,"y":7,"properties":{"view":"timeSeries","title":"Cluster volume used (bytes)","region":"",
+              {
+                "Ref": "AWS::Region",
+              },
+              "","metrics":[["AWS/RDS","VolumeBytesUsed","DBClusterIdentifier","app-database"]],"yAxis":{}}}]}",
+            ],
+          ],
+        },
+        "DashboardName": "aurora-app-database",
+      },
+      "Type": "AWS::CloudWatch::Dashboard",
+    },
+    "CdnDashboard2FBB0D98": {
+      "Properties": {
+        "DashboardBody": {
+          "Fn::Join": [
+            "",
+            [
+              "{"widgets":[{"type":"text","width":24,"height":1,"x":0,"y":0,"properties":{"markdown":"# CloudFront: E1ABCDEF2GHIJK"}},{"type":"metric","width":8,"height":6,"x":0,"y":1,"properties":{"view":"timeSeries","title":"Requests","region":"",
+              {
+                "Ref": "AWS::Region",
+              },
+              "","metrics":[["AWS/CloudFront","Requests","DistributionId","E1ABCDEF2GHIJK","Region","Global",{"region":"us-east-1","stat":"Sum"}]],"yAxis":{}}},{"type":"metric","width":8,"height":6,"x":8,"y":1,"properties":{"view":"timeSeries","title":"Error rate (%)","region":"",
+              {
+                "Ref": "AWS::Region",
+              },
+              "","metrics":[["AWS/CloudFront","TotalErrorRate","DistributionId","E1ABCDEF2GHIJK","Region","Global",{"region":"us-east-1"}],["AWS/CloudFront","4xxErrorRate","DistributionId","E1ABCDEF2GHIJK","Region","Global",{"region":"us-east-1"}],["AWS/CloudFront","5xxErrorRate","DistributionId","E1ABCDEF2GHIJK","Region","Global",{"region":"us-east-1"}]],"yAxis":{"left":{"min":0,"max":100}}}},{"type":"metric","width":8,"height":6,"x":16,"y":1,"properties":{"view":"timeSeries","title":"Data transfer (bytes)","region":"",
+              {
+                "Ref": "AWS::Region",
+              },
+              "","metrics":[["AWS/CloudFront","BytesDownloaded","DistributionId","E1ABCDEF2GHIJK","Region","Global",{"region":"us-east-1","stat":"Sum"}],["AWS/CloudFront","BytesUploaded","DistributionId","E1ABCDEF2GHIJK","Region","Global",{"region":"us-east-1","stat":"Sum"}]],"yAxis":{}}}]}",
+            ],
+          ],
+        },
+        "DashboardName": "cloudfront-E1ABCDEF2GHIJK",
+      },
+      "Type": "AWS::CloudWatch::Dashboard",
+    },
+    "OrderProcessorDashboardBB24B654": {
+      "Properties": {
+        "DashboardBody": {
+          "Fn::Join": [
+            "",
+            [
+              "{"widgets":[{"type":"text","width":24,"height":1,"x":0,"y":0,"properties":{"markdown":"# Lambda: order-processor"}},{"type":"metric","width":8,"height":6,"x":0,"y":1,"properties":{"view":"timeSeries","title":"Invocations & Errors","region":"",
+              {
+                "Ref": "AWS::Region",
+              },
+              "","metrics":[["AWS/Lambda","Invocations","FunctionName","order-processor",{"stat":"Sum"}],["AWS/Lambda","Errors","FunctionName","order-processor",{"stat":"Sum"}]],"yAxis":{}}},{"type":"metric","width":8,"height":6,"x":8,"y":1,"properties":{"view":"timeSeries","title":"Error rate (%)","region":"",
+              {
+                "Ref": "AWS::Region",
+              },
+              "","metrics":[[{"label":"Error rate","expression":"100 * errors / MAX([errors, invocations])"}],["AWS/Lambda","Errors","FunctionName","order-processor",{"id":"errors","visible":false,"stat":"Sum"}],["AWS/Lambda","Invocations","FunctionName","order-processor",{"id":"invocations","visible":false,"stat":"Sum"}]],"yAxis":{"left":{"min":0,"max":100}}}},{"type":"metric","width":8,"height":6,"x":16,"y":1,"properties":{"view":"timeSeries","title":"Duration (ms)","region":"",
+              {
+                "Ref": "AWS::Region",
+              },
+              "","metrics":[["AWS/Lambda","Duration","FunctionName","order-processor"],["AWS/Lambda","Duration","FunctionName","order-processor",{"stat":"p90"}],["AWS/Lambda","Duration","FunctionName","order-processor",{"stat":"p99"}]],"yAxis":{}}},{"type":"metric","width":12,"height":6,"x":0,"y":7,"properties":{"view":"timeSeries","title":"Throttles","region":"",
+              {
+                "Ref": "AWS::Region",
+              },
+              "","metrics":[["AWS/Lambda","Throttles","FunctionName","order-processor",{"stat":"Sum"}]],"yAxis":{}}},{"type":"metric","width":12,"height":6,"x":12,"y":7,"properties":{"view":"timeSeries","title":"Concurrent executions","region":"",
+              {
+                "Ref": "AWS::Region",
+              },
+              "","metrics":[["AWS/Lambda","ConcurrentExecutions","FunctionName","order-processor",{"stat":"Maximum"}]],"yAxis":{}}}]}",
+            ],
+          ],
+        },
+        "DashboardName": "lambda-order-processor",
+      },
+      "Type": "AWS::CloudWatch::Dashboard",
+    },
+    "PublicAlbDashboard7306744A": {
+      "Properties": {
+        "DashboardBody": {
+          "Fn::Join": [
+            "",
+            [
+              "{"widgets":[{"type":"text","width":24,"height":1,"x":0,"y":0,"properties":{"markdown":"# ALB: app/my-alb/50dc6c495c0c9188"}},{"type":"metric","width":8,"height":6,"x":0,"y":1,"properties":{"view":"timeSeries","title":"Requests","region":"",
+              {
+                "Ref": "AWS::Region",
+              },
+              "","metrics":[["AWS/ApplicationELB","RequestCount","LoadBalancer","app/my-alb/50dc6c495c0c9188",{"stat":"Sum"}]],"yAxis":{}}},{"type":"metric","width":8,"height":6,"x":8,"y":1,"properties":{"view":"timeSeries","title":"Response codes","region":"",
+              {
+                "Ref": "AWS::Region",
+              },
+              "","metrics":[["AWS/ApplicationELB","HTTPCode_Target_2XX_Count","LoadBalancer","app/my-alb/50dc6c495c0c9188",{"stat":"Sum"}],["AWS/ApplicationELB","HTTPCode_Target_4XX_Count","LoadBalancer","app/my-alb/50dc6c495c0c9188",{"stat":"Sum"}],["AWS/ApplicationELB","HTTPCode_Target_5XX_Count","LoadBalancer","app/my-alb/50dc6c495c0c9188",{"stat":"Sum"}],["AWS/ApplicationELB","HTTPCode_ELB_5XX_Count","LoadBalancer","app/my-alb/50dc6c495c0c9188",{"stat":"Sum"}]],"yAxis":{}}},{"type":"metric","width":8,"height":6,"x":16,"y":1,"properties":{"view":"timeSeries","title":"Target response time (seconds)","region":"",
+              {
+                "Ref": "AWS::Region",
+              },
+              "","metrics":[["AWS/ApplicationELB","TargetResponseTime","LoadBalancer","app/my-alb/50dc6c495c0c9188"],["AWS/ApplicationELB","TargetResponseTime","LoadBalancer","app/my-alb/50dc6c495c0c9188",{"stat":"p90"}],["AWS/ApplicationELB","TargetResponseTime","LoadBalancer","app/my-alb/50dc6c495c0c9188",{"stat":"p99"}]],"yAxis":{}}},{"type":"metric","width":12,"height":6,"x":0,"y":7,"properties":{"view":"timeSeries","title":"Connections","region":"",
+              {
+                "Ref": "AWS::Region",
+              },
+              "","metrics":[["AWS/ApplicationELB","ActiveConnectionCount","LoadBalancer","app/my-alb/50dc6c495c0c9188",{"stat":"Sum"}],["AWS/ApplicationELB","NewConnectionCount","LoadBalancer","app/my-alb/50dc6c495c0c9188",{"stat":"Sum"}],["AWS/ApplicationELB","RejectedConnectionCount","LoadBalancer","app/my-alb/50dc6c495c0c9188",{"stat":"Sum"}]],"yAxis":{}}},{"type":"metric","width":12,"height":6,"x":0,"y":13,"properties":{"view":"timeSeries","title":"Target health","region":"",
+              {
+                "Ref": "AWS::Region",
+              },
+              "","metrics":[["AWS/ApplicationELB","HealthyHostCount","LoadBalancer","app/my-alb/50dc6c495c0c9188","TargetGroup","targetgroup/my-targets/cbf133c568e0d028",{"stat":"Minimum"}],["AWS/ApplicationELB","UnHealthyHostCount","LoadBalancer","app/my-alb/50dc6c495c0c9188","TargetGroup","targetgroup/my-targets/cbf133c568e0d028",{"stat":"Maximum"}]],"yAxis":{}}}]}",
+            ],
+          ],
+        },
+        "DashboardName": "alb-app-my-alb-50dc6c495c0c9188",
+      },
+      "Type": "AWS::CloudWatch::Dashboard",
+    },
+    "PublicApiDashboardB9E4DC0C": {
+      "Properties": {
+        "DashboardBody": {
+          "Fn::Join": [
+            "",
+            [
+              "{"widgets":[{"type":"text","width":24,"height":1,"x":0,"y":0,"properties":{"markdown":"# API Gateway: public-api (prod)"}},{"type":"metric","width":8,"height":6,"x":0,"y":1,"properties":{"view":"timeSeries","title":"Requests","region":"",
+              {
+                "Ref": "AWS::Region",
+              },
+              "","metrics":[["AWS/ApiGateway","Count","ApiName","public-api","Stage","prod",{"stat":"SampleCount"}]],"yAxis":{}}},{"type":"metric","width":8,"height":6,"x":8,"y":1,"properties":{"view":"timeSeries","title":"Error rate (%) - 4XX / 5XX","region":"",
+              {
+                "Ref": "AWS::Region",
+              },
+              "","metrics":[[{"label":"4XX rate","expression":"100 * e4"}],["AWS/ApiGateway","4XXError","ApiName","public-api","Stage","prod",{"id":"e4","visible":false}],[{"label":"5XX rate","expression":"100 * e5"}],["AWS/ApiGateway","5XXError","ApiName","public-api","Stage","prod",{"id":"e5","visible":false}]],"yAxis":{"left":{"min":0,"max":100}}}},{"type":"metric","width":8,"height":6,"x":16,"y":1,"properties":{"view":"timeSeries","title":"Latency (ms)","region":"",
+              {
+                "Ref": "AWS::Region",
+              },
+              "","metrics":[["AWS/ApiGateway","Latency","ApiName","public-api","Stage","prod",{"stat":"p50"}],["AWS/ApiGateway","Latency","ApiName","public-api","Stage","prod",{"stat":"p90"}],["AWS/ApiGateway","Latency","ApiName","public-api","Stage","prod",{"stat":"p99"}]],"yAxis":{}}},{"type":"metric","width":24,"height":6,"x":0,"y":7,"properties":{"view":"timeSeries","title":"Integration latency vs total (p90, ms)","region":"",
+              {
+                "Ref": "AWS::Region",
+              },
+              "","metrics":[["AWS/ApiGateway","Latency","ApiName","public-api","Stage","prod",{"stat":"p90"}],["AWS/ApiGateway","IntegrationLatency","ApiName","public-api","Stage","prod",{"stat":"p90"}]],"yAxis":{}}}]}",
+            ],
+          ],
+        },
+        "DashboardName": "apigw-public-api-prod",
+      },
+      "Type": "AWS::CloudWatch::Dashboard",
+    },
+    "SavedQueriesLambdaColdStarts8EF55362": {
+      "Properties": {
+        "LogGroupNames": [],
+        "Name": "observability-template/lambda-cold-starts",
+        "QueryString": "fields @timestamp, @requestId, @initDuration
+| filter @type = "REPORT"
+| filter ispresent(@initDuration)
+| sort @timestamp desc
+| limit 50",
+      },
+      "Type": "AWS::Logs::QueryDefinition",
+    },
+    "SavedQueriesLambdaMemoryHeadroomB779962D": {
+      "Properties": {
+        "LogGroupNames": [],
+        "Name": "observability-template/lambda-memory-headroom",
+        "QueryString": "filter @type = "REPORT"
+| stats max(@memorySize / 1000 / 1000) as provisioned_mb, max(@maxMemoryUsed / 1000 / 1000) as max_used_mb, avg(@maxMemoryUsed / 1000 / 1000) as avg_used_mb",
+      },
+      "Type": "AWS::Logs::QueryDefinition",
+    },
+    "SavedQueriesLambdaSlowestInvocationsBC32B9EA": {
+      "Properties": {
+        "LogGroupNames": [],
+        "Name": "observability-template/lambda-slowest-invocations",
+        "QueryString": "fields @timestamp, @requestId, @duration, @maxMemoryUsed
+| filter @type = "REPORT"
+| sort @duration desc
+| limit 20",
+      },
+      "Type": "AWS::Logs::QueryDefinition",
+    },
+    "SavedQueriesLogVolumeByStream6A54F47B": {
+      "Properties": {
+        "LogGroupNames": [],
+        "Name": "observability-template/log-volume-by-stream",
+        "QueryString": "stats count(*) as events by @logStream
+| sort events desc
+| limit 25",
+      },
+      "Type": "AWS::Logs::QueryDefinition",
+    },
+    "SavedQueriesRecentErrorsD965FE70": {
+      "Properties": {
+        "LogGroupNames": [],
+        "Name": "observability-template/recent-errors",
+        "QueryString": "fields @timestamp, @logStream, @message
+| filter @message like /(?i)(error|exception|fail)/
+| sort @timestamp desc
+| limit 100",
+      },
+      "Type": "AWS::Logs::QueryDefinition",
+    },
+    "SavedQueriesTopErrorMessagesB5B87792": {
+      "Properties": {
+        "LogGroupNames": [],
+        "Name": "observability-template/top-error-messages",
+        "QueryString": "filter @message like /(?i)(error|exception)/
+| stats count(*) as occurrences by @message
+| sort occurrences desc
+| limit 25",
+      },
+      "Type": "AWS::Logs::QueryDefinition",
+    },
+  },
+  "Rules": {
+    "CheckBootstrapVersion": {
+      "Assertions": [
+        {
+          "Assert": {
+            "Fn::Not": [
+              {
+                "Fn::Contains": [
+                  [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                  ],
+                  {
+                    "Ref": "BootstrapVersion",
+                  },
+                ],
+              },
+            ],
+          },
+          "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI.",
+        },
+      ],
+    },
+  },
+}
+`;
