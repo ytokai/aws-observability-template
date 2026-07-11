@@ -1,12 +1,13 @@
 {
   "name": "aws-observability-template",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Service-specific CloudWatch dashboard constructs and Logs Insights query library for AWS CDK",
   "license": "MIT",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
-    "lib"
+    "lib/**/*.js",
+    "lib/**/*.d.ts"
   ],
   "repository": {
     "type": "git",
